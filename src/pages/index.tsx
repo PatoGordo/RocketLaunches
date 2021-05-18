@@ -1,13 +1,10 @@
 import * as React from "react";
 import axios from "axios";
 
-import { LaunchDetails } from '../apptypes'
-
 const { useEffect, useState } = React;
 
 export default function Index() {
   const [data, setData] = useState([]);
-  const [details, setDetails] = useState({vehicle: {name: null}})
 
   const url: string = "https://api.rocketlaunches.ga/api/launches";
 
@@ -30,16 +27,8 @@ export default function Index() {
           <small>{new Date(launch.sort_date * 1000).toLocaleString()}</small>
           <p>{launch.launch_description}</p>
           <button className="details" onClick={() => {
-              let {vehicle, pad, weather_temp, weather_condition, weather_wind_mph}: LaunchDetails = launch
-              setDetails({
-                vehicle,
-                pad,
-                weather_temp,
-                weather_condition,
-                weather_wind_mph
-              })
               showDetails()
-            }}>Show details</button>
+            }}>Show details [coming soon]</button>
         </div>
       ))}
       <h2>Breaking news</h2>
