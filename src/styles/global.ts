@@ -14,4 +14,12 @@ export default createGlobalStyle`
     color: #1c2020;
     font: 400 1rem Roboto, sans-serif;
   }
+  .details {
+    background: #25b5c5;
+    border: 0;
+    border-radius: .45rem;
+    padding: 6px 8px;
+    color: #fff;
+    cursor: pointer;
+  }
 `;
