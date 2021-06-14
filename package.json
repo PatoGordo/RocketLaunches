@@ -12,6 +12,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-ionicons": "^4.2.0",
     "styled-components": "5.3.0"
   },
   "devDependencies": {

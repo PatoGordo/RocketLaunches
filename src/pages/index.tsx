@@ -1,37 +1,59 @@
-import * as React from "react";
 import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Cards, Card, CardTitle, CardDate, CardDescription, CardText, CardImage } from "../styles/cards";
 
-const { useEffect, useState } = React;
-
-export default function Index() {
-  const [data, setData] = useState([]);
-
-  const url: string = "https://api.rocketlaunches.ga/api/launches";
+function home() {
+  const [launches, setLaunches] = useState([]);
+  const [news, setNews] = useState([])
 
   useEffect(() => {
-    axios.get(url).then((res) => {
-      setData(res.data.result.slice(0, 1));
+    axios.get("/api/launches").then((res) => {
+      setLaunches(res.data.result.slice(0, 1));
     });
-  });
-
-  function showDetails() {
-    alert('Coming soon')
-  }
+    axios.get('/api/news').then((res) => {
+      setNews(res.data.result.slice(0, 1));
+    })
+  }, []);
 
   return (
     <div>
-      <h2>Next launch</h2>
-      {data.map((launch) => (
-        <div key={launch.key}>
-          <h3>{launch.name}</h3>
-          <small>{new Date(launch.sort_date * 1000).toLocaleString()}</small>
-          <p>{launch.launch_description}</p>
-          <button className="details" onClick={() => {
-              showDetails()
-            }}>Show details [coming soon]</button>
-        </div>
-      ))}
-      <h2>Breaking news</h2>
+      <div>
+        <Cards>
+          {
+            launches.map((launch, key) => (
+              <Card key={key}>
+                <h1 style={{ fontSize: '1.8rem', marginBottom: 10, textAlign: 'center', width: '100%' }}>Next launch</h1>
+                <CardTitle>{launch.name}</CardTitle>
+                <CardDate>
+                  {new Date(launch.sort_date * 1000).toLocaleString()} (
+                  {Intl.DateTimeFormat().resolvedOptions().timeZone})
+                </CardDate>
+                <CardDescription>{launch.launch_description}</CardDescription>
+                <CardText><strong>Vehicle:</strong> {launch.vehicle.name}</CardText>
+                <CardText><strong>Location: </strong> {launch.pad.location.name}, {launch.pad.location.country}</CardText>
+                <CardText><strong>Weather</strong><br />Condition: {launch.weather_condition},<br />Temperature: {Math.ceil(launch.weather_temp)} °F,<br />Wind: {launch.weather_wind_mph} Mph.</CardText>
+              </Card>
+            ))
+          }
+          {
+            news.map((article, key) => (
+              <Card key={key}>
+                <h1 style={{ fontSize: '1.8rem', marginBottom: 10, textAlign: 'center', width: '100%' }}>Breaking news</h1>
+                <CardTitle>{article.title}</CardTitle>
+                <CardDate>
+                  {new Date(article.publishedAt).toLocaleString()} (
+                  {Intl.DateTimeFormat().resolvedOptions().timeZone})
+                </CardDate>
+                {/* <CardDescription>{article.summary}</CardDescription> */}
+                <CardImage src={article.imageUrl} alt="" />
+                <a href={article.url} target="blank" style={{ textDecoration: 'none' }}><strong>Know more on {article.newsSite}</strong></a>
+              </Card>
+            ))
+          }
+        </Cards>
+      </div>
     </div>
   );
 }
+
+export default home;
