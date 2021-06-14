@@ -24,11 +24,11 @@
 ***
 
 ## ToDo
-- [x] add style components
+- [x] add styled-components
 - [x] routing
 - [x] a better cache control
 - [ ] ssr/ssg
-- [ ] add static paths with cache
+- [ ] add static paths with page cache control
 - [ ] add google analytics 
 
 ## Show your support :handshake:
