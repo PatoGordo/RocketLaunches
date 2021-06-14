@@ -30,7 +30,7 @@
 - [ ] ssr/ssg
 - [ ] add static paths with page cache control
 - [ ] add google analytics
-- [ ] loading animation
+- [x] loading animation
 
 ## Show your support :handshake:
 
