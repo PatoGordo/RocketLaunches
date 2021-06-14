@@ -6,8 +6,12 @@ function launches() {
   const [launches, setLaunches] = useState([]);
 
   useEffect(() => {
+    const loadingBar = document.querySelector('#loading')
+    loadingBar.classList.add('run')
+
     axios.get("/api/launches").then((res) => {
       setLaunches(res.data.result);
+      loadingBar.classList.remove('run')
     });
   }, []);
 

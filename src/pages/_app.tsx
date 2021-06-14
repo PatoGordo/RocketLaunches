@@ -2,17 +2,41 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import GlobalStyle from '../styles/global'
 import { Navbar, IconContainer } from '../styles/navbar'
+import { LoadingAnimation } from '../styles/loading'
 import { CogOutline, HomeOutline, NewspaperOutline, RocketOutline } from 'react-ionicons'
 import { useRouter } from 'next/router'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
-  
+
   return (
     <>
       <main className="component">
         <Component {...pageProps} />
       </main>
+
+      <LoadingAnimation id="loading">
+        <svg version="1.1" id="L3" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 100 100" enableBackground="new 0 0 0 0" xmlSpace="preserve">
+          <circle fill="none" stroke="#fff" strokeWidth="4" cx="50" cy="50" r="44" style={{opacity: 0.5}} />
+          <circle fill="#fff" stroke="#00C853" strokeWidth="3" cx="8" cy="54" r="6" >
+            <animateTransform
+              attributeName="transform"
+              dur="2s"
+              type="rotate"
+              from="0 50 48"
+              to="360 50 52"
+              repeatCount="indefinite" />
+
+          </circle>
+        </svg>
+        <h2>Fetching data
+          <span className="loader__dot">.</span>
+          <span className="loader__dot">.</span>
+          <span className="loader__dot">.</span>
+        </h2>
+      </LoadingAnimation>
+
       <Navbar>
         <IconContainer className={router.pathname === '/' ? 'active' : ''} onClick={() => router.push('/')}>
           <HomeOutline width="24px" height="24px" color="#ffffff" />

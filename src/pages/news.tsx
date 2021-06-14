@@ -6,8 +6,12 @@ function news() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
+    const loadingBar = document.querySelector('#loading')
+    loadingBar.classList.add('run')
+
     axios.get("/api/news").then((res) => {
       setNews(res.data.result);
+      loadingBar.classList.remove('run')
     });
   }, []);
 

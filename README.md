@@ -29,7 +29,8 @@
 - [x] a better cache control
 - [ ] ssr/ssg
 - [ ] add static paths with page cache control
-- [ ] add google analytics 
+- [ ] add google analytics
+- [ ] loading animation
 
 ## Show your support :handshake:
 
