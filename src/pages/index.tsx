@@ -5,11 +5,15 @@ import { Cards, Card, CardTitle, CardDate, CardDescription, CardText, CardImage 
 function home() {
   const [launches, setLaunches] = useState([]);
   const [news, setNews] = useState([])
-
+  const [isMetric, setIsMetric] = useState(false)
   
   useEffect(() => {
     const loadingBar = document.querySelector('#loading')
     loadingBar.classList.add('run')
+
+    if (localStorage.getItem('RocketLaunches::Measures') === 'metric') {
+      setIsMetric(true)
+    }
 
     axios.get("/api/launches").then((res) => {
       setLaunches(res.data.result.slice(0, 1));
@@ -19,6 +23,24 @@ function home() {
       })
     });
   }, []);
+
+  function toMetricTemp(fahrenheit: number) {
+    if (fahrenheit === null) {
+      return null
+    } else {
+      var celsius = (fahrenheit - 32) * 5 / 9
+      return Math.ceil(celsius)
+    }
+  }
+
+  function toMetricSpeed(mph: number) {
+    if (mph === null) {
+      return null
+    } else {
+      var kmh = mph * 1.609344
+      return kmh.toFixed(2)
+    }
+  }
 
   return (
     <div>
@@ -36,7 +58,12 @@ function home() {
                 <CardDescription>{launch.launch_description}</CardDescription>
                 <CardText><strong>Vehicle:</strong> {launch.vehicle.name}</CardText>
                 <CardText><strong>Location: </strong> {launch.pad.location.name}, {launch.pad.location.country}</CardText>
-                <CardText><strong>Weather</strong><br />Condition: {launch.weather_condition},<br />Temperature: {Math.ceil(launch.weather_temp)} °F,<br />Wind: {launch.weather_wind_mph} Mph.</CardText>
+                <CardText>
+                  <strong>Weather</strong>
+                  <br />Condition: {launch.weather_condition},
+                  <br />Temperature: {isMetric ? toMetricTemp(launch.weather_temp) + ' °C' : Math.ceil(launch.weather_temp) + ' °F'},
+                  <br />Wind: {isMetric ? toMetricSpeed(launch.weather_wind_mph) + ' Km/h' : launch.weather_wind_mph + ' Mph'}
+                </CardText>
               </Card>
             ))
           }

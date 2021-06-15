@@ -20,7 +20,20 @@ export default createGlobalStyle`
     text-align: center;
     background: #171d2d;
     color: #e1e2e4;
-    font: 400 1rem;
+    transition: all ease .3s;
+    &.light {
+      background: #fff !important;
+      color: #24292e !important;
+      transition: all ease .3s;
+      #loading {
+        background: #f3fbff !important;
+        transition: all ease .3s;
+      }
+      #navbar {
+        background: #24292E !important;
+        transition: all ease .3s;
+      }
+    }
   }
   a {
     color: #1E88E5!important

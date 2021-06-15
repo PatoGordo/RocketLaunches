@@ -15,6 +15,7 @@ function launches() {
     });
   }, []);
 
+
   return (
     <div>
       <h1>Next four launches</h1>
@@ -30,7 +31,6 @@ function launches() {
               <CardDescription>{launch.launch_description}</CardDescription>
               <CardText><strong>Vehicle:</strong> {launch.vehicle.name}</CardText>
               <CardText><strong>Location: </strong> {launch.pad.location.name}, {launch.pad.location.country}</CardText>
-              {/* <CardText><strong>Weather</strong><br />Condition: {launch.weather_condition},<br />Temperature: {Math.ceil(launch.weather_temp)} °F,<br />Wind: {launch.weather_wind_mph} Mph.</CardText> */}
             </Card>
           );
         })}

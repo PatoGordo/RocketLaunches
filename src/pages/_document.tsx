@@ -2,7 +2,9 @@ import React from 'react'
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+
 export default class MyDocument extends Document {
+
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
@@ -28,18 +30,21 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
+
   render() {
     return (
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" crossOrigin="anonymous"/>
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet" crossOrigin="anonymous"></link>
         </Head>
 
         <body>
-          <Main />
+          <React.StrictMode>
+            <Main />
+          </React.StrictMode>
           <NextScript />
         </body>
       </Html>

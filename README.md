@@ -1,5 +1,5 @@
 # Welcome to Rocket Launches Next Version 👋
-![Version](https://img.shields.io/badge/Version-Beta_0.2-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/Version-Beta_0.4-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](#)
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
@@ -27,10 +27,10 @@
 - [x] add styled-components
 - [x] routing
 - [x] a better cache control
-- [ ] ssr/ssg
-- [ ] add static paths with page cache control
-- [ ] add google analytics
+- [x] ssr/ssg
 - [x] loading animation
+- [x] settings (Maybe not working correctly)
+- [ ] add google analytics
 
 ## Show your support :handshake:
 

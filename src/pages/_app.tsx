@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import GlobalStyle from '../styles/global'
 import { Navbar, IconContainer } from '../styles/navbar'
@@ -9,6 +9,19 @@ import { useRouter } from 'next/router'
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
 
+  useEffect(() => {
+    if(!localStorage.getItem('RocketLaunches::Theme')) {
+      localStorage.setItem('RocketLaunches::Theme', 'dark')
+    }
+    if(!localStorage.getItem('RocketLaunches::Measures')) {
+      localStorage.setItem('RocketLaunches::Measures', 'metric')
+    }
+    if(localStorage.getItem('RocketLaunches::Theme') === 'light') {
+      document.querySelector('body').classList.add('light')
+    }
+    document.querySelector('body').classList.remove('dark')
+  }, [])
+
   return (
     <>
       <main className="component">
@@ -18,7 +31,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <LoadingAnimation id="loading">
         <svg version="1.1" id="L3" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 100 100" enableBackground="new 0 0 0 0" xmlSpace="preserve">
-          <circle fill="none" stroke="#fff" strokeWidth="4" cx="50" cy="50" r="44" style={{opacity: 0.5}} />
+          <circle fill="none" stroke="#536464" strokeWidth="4" cx="50" cy="50" r="44" style={{opacity: 0.5}} />
           <circle fill="#fff" stroke="#00C853" strokeWidth="3" cx="8" cy="54" r="6" >
             <animateTransform
               attributeName="transform"
@@ -37,7 +50,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         </h2>
       </LoadingAnimation>
 
-      <Navbar>
+      <Navbar id="navbar">
         <IconContainer className={router.pathname === '/' ? 'active' : ''} onClick={() => router.push('/')}>
           <HomeOutline width="24px" height="24px" color="#ffffff" />
           <a>Home</a>

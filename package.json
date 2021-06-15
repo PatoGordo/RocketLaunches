@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next",
     "post-update": "yarn upgrade --latest",
-    "git-commit": "git add . && git commit -m Beta0.3 && git push"
+    "git-commit": "git add . && git commit -m Beta0.4 && git push"
   },
   "dependencies": {
     "axios": "0.21.1",
