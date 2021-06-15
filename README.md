@@ -3,15 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](#)
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-> This project was made to you inform your self about next rocket launches.
+> Rocket launches, a simple site to let you know what is the next rocket launch.
 ### 🏠 [Homepage](https://rocketlaunches.ga/)
-### 📕 [API](https://api.rocketlaunches.ga/)
 
 ## Features :zap:
 [![Deployed in Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://rocketlaunches.ga)
-[![Vuejs](	https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white)](https://nextjs.org/)
-[![Google Analytics](	https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Nextjs](	https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white)](https://nextjs.org/)
+[![Typescript](	https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Stlyed Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)](https://styled-components.com/)
+[![Google Analytics](https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white)](https://analytics.google.com/)
 
 ## Usage :hammer_and_pick:
 ```
