@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { SwitchComponent } from '../styles/switch'
 import { ToggleCard } from '../styles/settings-page'
+import { useRouter } from 'next/router'
 
 function settings() {
   const [isDark, setIsDark] = useState(false)
-  const [measures, setMeasures] = useState('metric')
+  const [measures, setMeasures] = useState(true)
+  // true => metric; fasle => imperial
+  const router = useRouter()
 
   useEffect(() => {
+    console.log('carregou')
     if(localStorage.getItem('RocketLaunches::Measures') === 'metric') {
-      setMeasures('metric')
+      setMeasures(true)
+      console.log('metrico')
     }else{
-      setMeasures('imperial')
+      setMeasures(false)
+      console.log('imperial')
     }
 
     if(localStorage.getItem('RocketLaunches::Theme') === 'dark') {
       setIsDark(true)
+      console.log('dark')
     }else{
       setIsDark(false)
+      console.log('light')
     }
   }, [])
-
+  
   function handleChangeTheme(e: React.FormEvent<HTMLLabelElement>) {
     e.preventDefault()
 
@@ -39,12 +47,12 @@ function settings() {
   function handleChangeMeasures(e: React.FormEvent<HTMLLabelElement>) {
     e.preventDefault()
 
-    if(measures === 'metric') {
-      setMeasures('imperial')
+    if(measures) {
+      setMeasures(false)
       localStorage.setItem('RocketLaunches::Measures', 'imperial')
       return
     }
-    setMeasures('metric')
+    setMeasures(true)
     localStorage.setItem('RocketLaunches::Measures', 'metric')
   }
 
@@ -56,7 +64,8 @@ function settings() {
       <ToggleCard>
         <h3>Light</h3>
         <SwitchComponent onClick={(e) => handleChangeTheme(e)} htmlFor="input">
-          <input id="input" type="checkbox" defaultChecked={isDark} />
+          <input id="input" type="checkbox" checked={isDark} onChange={() => {}} />
+          {/* The onChange is to stop warning */}
           <span className="slider round"></span>
         </SwitchComponent>
         <h3>Dark</h3>
@@ -66,7 +75,7 @@ function settings() {
       <ToggleCard>
         <h3>Imperial</h3>
         <SwitchComponent onClick={(e) => handleChangeMeasures(e)} htmlFor="input2">
-          <input id="input2" type="checkbox" defaultChecked={measures === 'metric' ? true : false} />
+          <input id="input2" type="checkbox" checked={measures} onChange={() => {}} />
           <span className="slider round"></span>
         </SwitchComponent>
         <h3>Metric</h3>
