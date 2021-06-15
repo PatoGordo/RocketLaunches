@@ -3,7 +3,7 @@
   "short_name": "Rocket Launches",
   "theme_color": "#1d2333",
   "background_color": "#171d2d",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
   "start_url": "/",
