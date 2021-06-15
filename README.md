@@ -23,14 +23,19 @@
 ```
 ***
 
-## ToDo
+## ToDo Part 1
 - [x] add styled-components
 - [x] routing
 - [x] a better cache control
 - [x] ssr/ssg
 - [x] loading animation
 - [x] settings
+
+## ToDo Part 2
+- [ ] push notifications
 - [ ] add google analytics
+- [ ] pwa
+- [ ] Mobile app (maybe)
 
 ## Show your support :handshake:
 

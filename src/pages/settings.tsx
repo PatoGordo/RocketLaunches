@@ -4,7 +4,7 @@ import { ToggleCard } from '../styles/settings-page'
 import { useRouter } from 'next/router'
 
 function settings() {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(true)
   const [measures, setMeasures] = useState(true)
   // true => metric; fasle => imperial
   const router = useRouter()
