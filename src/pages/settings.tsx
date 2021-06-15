@@ -10,21 +10,16 @@ function settings() {
   const router = useRouter()
 
   useEffect(() => {
-    console.log('carregou')
     if(localStorage.getItem('RocketLaunches::Measures') === 'metric') {
       setMeasures(true)
-      console.log('metrico')
     }else{
       setMeasures(false)
-      console.log('imperial')
     }
 
     if(localStorage.getItem('RocketLaunches::Theme') === 'dark') {
       setIsDark(true)
-      console.log('dark')
     }else{
       setIsDark(false)
-      console.log('light')
     }
   }, [])
   

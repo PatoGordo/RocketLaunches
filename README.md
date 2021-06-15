@@ -1,5 +1,5 @@
 # Welcome to Rocket Launches Next Version 👋
-![Version](https://img.shields.io/badge/Version-Beta_0.4.2-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/Version-Beta_0.5.1-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](#)
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
@@ -32,9 +32,9 @@
 - [x] settings
 
 ## ToDo Part 2
-- [ ] push notifications
+- [x] pwa
 - [ ] add google analytics
-- [ ] pwa
+- [ ] push notifications
 - [ ] Mobile app (maybe)
 
 ## Show your support :handshake:

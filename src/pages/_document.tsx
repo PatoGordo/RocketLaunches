@@ -39,6 +39,12 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" crossOrigin="anonymous"/>
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&amp;display=swap" rel="stylesheet" crossOrigin="anonymous"></link>
+
+          <link rel="manifest" href="/manifest.json" />
+          <link href="/images/favicon.svg" rel="icon" type="image/png" sizes="16x16" />
+          <link href="/images/favicon.svg" rel="icon" type="image/png" sizes="32x32" />
+          <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+          <meta name="theme-color" content="#317EFB" />
         </Head>
 
         <body>
