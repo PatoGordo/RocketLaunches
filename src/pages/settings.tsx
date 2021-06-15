@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { SwitchComponent } from '../styles/switch'
 import { ToggleCard } from '../styles/settings-page'
 import { useRouter } from 'next/router'
-
+import '../firebase'
 function settings() {
   const [isDark, setIsDark] = useState(true)
-  const [measures, setMeasures] = useState(true)
-  // true => metric; fasle => imperial
+  const [measures, setMeasures] = useState(true) // true => metric; fasle => imperial
   const router = useRouter()
 
   useEffect(() => {

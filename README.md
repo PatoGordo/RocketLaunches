@@ -1,5 +1,5 @@
 # Welcome to Rocket Launches Next Version 👋
-![Version](https://img.shields.io/badge/Version-Beta_0.5.2-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/Version-Beta_1.0-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](#)
 [![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
@@ -23,19 +23,17 @@
 ```
 ***
 
-## ToDo Part 1
-- [x] add styled-components
-- [x] routing
-- [x] a better cache control
-- [x] ssr/ssg
-- [x] loading animation
-- [x] settings
+## What's new? 
+- [x] Styles
+- [x] Api cache control
+- [x] Loading Modal Animations
+- [x] App settings v1
+- [x] Progresive web app
+- [x] Google analytics integration (Firebase)
 
-## ToDo Part 2
-- [x] pwa
-- [x] add google analytics (remove from the _app.tsx !important)
-- [ ] push notifications
-- [ ] Mobile app (maybe)
+## Plans
+- [ ] Mobile app
+- [ ] Push notifications
 
 ## Show your support :handshake:
 

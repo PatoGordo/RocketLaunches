@@ -5,21 +5,13 @@ import { Navbar, IconContainer } from '../styles/navbar'
 import { LoadingAnimation } from '../styles/loading'
 import { CogOutline, HomeOutline, NewspaperOutline, RocketOutline } from 'react-ionicons'
 import { useRouter } from 'next/router'
-import Firebase from 'firebase/app'
-import 'firebase/analytics'
+import { app } from '../firebase'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter()
-
+  
   useEffect(() => {
-    // Will be removed, soon
-    const firebaseApp = Firebase.initializeApp({
-      apiKey: "AIzaSyAGgrAm4K626ssrKaiHBdP5Il1H1rPH6Po",
-      authDomain: "patogordo-ga.firebaseapp.com",
-      projectId: "patogordo-ga",
-      appId: "1:389441013936:web:18ac11dfd868ac2f9fd375"
-    })
-    firebaseApp.analytics()
+    app.analytics()
 
     if(!localStorage.getItem('RocketLaunches::Theme')) {
       localStorage.setItem('RocketLaunches::Theme', 'dark')
