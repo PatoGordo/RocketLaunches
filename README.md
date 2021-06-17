@@ -11,6 +11,7 @@
 [![Nextjs](	https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white)](https://nextjs.org/)
 [![Typescript](	https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Stlyed Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)](https://styled-components.com/)
+[![Pwa](https://img.shields.io/badge/Pwa-35495E?style=for-the-badge&logo=pwa&logoColor=4FC08D)](https://web.dev/progressive-web-apps/)
 [![Google Analytics](https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=google%20analytics&logoColor=white)](https://analytics.google.com/)
 
 ## Usage :hammer_and_pick:
