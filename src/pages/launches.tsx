@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Cards, Card, CardTitle, CardDate, CardDescription, CardText } from "../styles/cards";
+import { Cards, Card } from "../styles/cards";
+import LaunchCard from '../components/launchcard'
 
 function launches() {
   const [launches, setLaunches] = useState([]);
@@ -17,21 +18,22 @@ function launches() {
 
 
   return (
-    <div>
+    <div style={{marginTop: '50px'}}>
       <h1>Next four launches</h1>
       <Cards>
         {launches.map((launch, key) => {
           return (
-            <Card key={key}>
-              <CardTitle>{launch.name}</CardTitle>
-              <CardDate>
-                {new Date(launch.sort_date * 1000).toLocaleString()} (
-                {Intl.DateTimeFormat().resolvedOptions().timeZone})
-              </CardDate>
-              <CardDescription>{launch.launch_description}</CardDescription>
-              <CardText><strong>Vehicle:</strong> {launch.vehicle.name}</CardText>
-              <CardText><strong>Location: </strong> {launch.pad.location.name}, {launch.pad.location.country}</CardText>
-            </Card>
+            <LaunchCard 
+              key={key}
+              LaunchDate={launch.sort_date} 
+              MissionDescription={launch.launch_description}
+              MissionName={launch.name}
+              PadLocationCountry={launch.pad.location.country}
+              PadLocationState={launch.pad.location.state}
+              PadName={launch.pad.name}
+              company={launch.provider.name}
+              vehicleName={launch.vehicle.name}
+            />
           );
         })}
       </Cards>

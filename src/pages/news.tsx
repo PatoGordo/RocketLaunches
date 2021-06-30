@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Cards, Card, CardTitle, CardDate, CardImage } from "../styles/cards";
+import { Cards } from "../styles/cards";
+import NewsCard from '../components/newscard'
 
 function news() {
   const [news, setNews] = useState([]);
@@ -16,21 +17,19 @@ function news() {
   }, []);
 
   return (
-    <div>
+    <div style={{marginTop: '50px'}}>
       <h1>Astronomy news</h1>
       <Cards>
         {
           news.map((article, key) => (
-            <Card key={key}>
-              <CardTitle>{article.title}</CardTitle>
-              <CardDate>
-                {new Date(article.publishedAt).toLocaleString()} (
-                {Intl.DateTimeFormat().resolvedOptions().timeZone})
-              </CardDate>
-              {/* <CardDescription>{article.summary}</CardDescription> */}
-              <CardImage src={article.imageUrl} alt="" />
-              <a href={article.url} target="blank" style={{textDecoration: 'none'}}><strong>Know more on {article.newsSite}</strong></a>
-            </Card>
+            <NewsCard
+              key={key}
+              website={article.newsSite}
+              articleName={article.title}
+              articleDescription={article.summary}
+              publishedAt={article.publishedAt}
+              website_url={article.url}
+            />
           ))
         }
       </Cards>

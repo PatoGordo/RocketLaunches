@@ -5,8 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next",
-    "post-update": "yarn upgrade --latest",
-    "push": "git add . && git commit -m 1.0 && git push"
+    "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
     "axios": "0.21.1",

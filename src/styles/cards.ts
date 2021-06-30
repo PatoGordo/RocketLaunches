@@ -1,5 +1,100 @@
 import styled from "styled-components";
 
+export const LaunchCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+  background: #2d333b;
+  border-radius: 8px;
+  margin: 15px;
+  .top {
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    background: #48515c;
+    border-radius: 8px 8px 0 0;
+    .icon {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+  .body {
+    padding: 10px;
+    .TTimer {
+      text-align: center;
+      font-family: 'Roboto Slab', serif;
+      font-size: 25px;
+      font-weight: 500;
+      border-bottom: 1px solid #aaa;
+      margin-bottom: 15px;
+    }
+    .launch_details {
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+      }
+    }
+  }
+`
+export const NewsCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: start;
+  background: #2d333b;
+  border-radius: 8px;
+  margin: 15px;
+  .top {
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    background: #48515c;
+    border-radius: 8px 8px 0 0;
+    align-self: flex-start;
+    .icon {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+  .body {
+    padding: 10px;
+    .article_details {
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 14px;
+      }
+      a {
+        color: #00E676;
+      }
+    }
+  }
+`
+
 export const Cards = styled.section`
   display: grid;
   place-items: center;

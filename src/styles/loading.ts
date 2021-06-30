@@ -10,7 +10,7 @@ export const LoadingAnimation = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #1d2333;
+  background: #22272e;
   z-index: 10;
   &.run {
     display: flex !important;

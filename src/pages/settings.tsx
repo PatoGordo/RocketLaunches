@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { SwitchComponent } from '../styles/switch'
 import { ToggleCard } from '../styles/settings-page'
 import { useRouter } from 'next/router'
-import '../firebase'
+
 function settings() {
   const [isDark, setIsDark] = useState(true)
   const [measures, setMeasures] = useState(true) // true => metric; fasle => imperial
-  const router = useRouter()
 
   useEffect(() => {
     if(localStorage.getItem('RocketLaunches::Measures') === 'metric') {
@@ -38,8 +37,9 @@ function settings() {
     localStorage.setItem('RocketLaunches::Theme', 'dark')
   }
 
-  function handleChangeMeasures(e: React.FormEvent<HTMLLabelElement>) {
+  function handleChangeMeasures(e: React.FormEvent<HTMLLabelElement> | React.MouseEvent<HTMLElement>) {
     e.preventDefault()
+    
 
     if(measures) {
       setMeasures(false)
@@ -52,9 +52,9 @@ function settings() {
 
   return (
     <div>
-      <h1>Settings</h1>
+      <h2>Settings</h2>
 
-      <h2 style={{fontWeight: 400}}>Theme</h2>
+      <h3 style={{fontWeight: 400}}>Theme</h3>
       <ToggleCard>
         <h3>Light</h3>
         <SwitchComponent onClick={(e) => handleChangeTheme(e)} htmlFor="input">
@@ -65,7 +65,7 @@ function settings() {
         <h3>Dark</h3>
       </ToggleCard>
 
-      <h2 style={{fontWeight: 400}}>Measures</h2>
+      <h3 style={{fontWeight: 400}}>Measures</h3>
       <ToggleCard>
         <h3>Imperial</h3>
         <SwitchComponent onClick={(e) => handleChangeMeasures(e)} htmlFor="input2">

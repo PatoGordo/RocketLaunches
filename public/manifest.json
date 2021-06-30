@@ -1,8 +1,8 @@
 {
   "name": "Rocket Launches",
   "short_name": "Rocket Launches",
-  "theme_color": "#1d2333",
-  "background_color": "#171d2d",
+  "theme_color": "#2d333b",
+  "background_color": "#22272e",
   "display": "standalone",
   "orientation": "portrait",
   "scope": "/",
